@@ -15,3 +15,11 @@ Ilias and Lawrence (aka the Aaantwaarpeeuh Gang)
 
 ## DOUBTS, WORRIES, QUESTIONS
 - The difference between the 'customer' and 'customer group' entities in the database and how they relate
+
+## TASKS FOR 15/06/2021 
+- Create env.local file to use in project
+- Connect Database
+- MVC
+- Display database content on page
+- Understanding on how to use PDO in PHP
+- HAVE FUN
