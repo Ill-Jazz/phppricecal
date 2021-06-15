@@ -5,6 +5,10 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 require 'Model/connection.php';
+require 'Model/customer.php';
+require 'Model/customer_groups.php';
+require 'Model/products.php';
+
 
 require 'Controller/HomepageController.php';
 $controller = new HomepageController();
