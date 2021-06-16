@@ -13,5 +13,7 @@ class ProductsLoader
 
         $productArray = [];
         foreach ($products as $product) {
-            $product = new
+            $product = new Products($product['id'], $product['name'], $product['price']);
 }
+    }
+    }
