@@ -7,7 +7,7 @@ class Connection
     {
         $dbhost = 'localhost';
         $dbuser = 'root';
-        $dbpass = 'myPassword';
+        $dbpass = '';
         $db = 'oop-price-calculator';
 
         $driverOptions = [
