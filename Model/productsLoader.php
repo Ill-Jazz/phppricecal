@@ -1,7 +1,7 @@
 <?php
 
 
-class productsLoader
+class ProductsLoader
 {
     public function getProducts() {
         $connect = new Connection();
