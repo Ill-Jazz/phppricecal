@@ -10,11 +10,13 @@ class HomepageController
         $pdo = Connection::openConnection();
         $handle = $pdo->prepare('SELECT * FROM customer WHERE firstname = "buddy"');
         $handle->execute();
-        $handle->fetch();
-        $customer = $handle->fetch();
+        $handle->fetchAll();
 
-        var_dump($customer);
+        $loaderForProducts = new ProductLoader();
+        $allProducts = $loaderForProducts->getProducts();
 
+        /*$loaderForCustomers = new CustomerLoader();
+        $allCustomers = $loaderForCustomers->getCustomers();*/
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

@@ -1,19 +1,22 @@
 <?php
 
 
-class ProductsLoader
+class ProductLoader
 {
-    public function getProducts() {
+    public function getProducts()
+    {
         $connect = new Connection();
-        $pdo = $connect -> Openconnection();
+        $pdo = $connect->Openconnection();
 
-        $handle = $pdo -> prepare("SELECT * FROM product");
-        $handle -> execute();
-        $products = $handle -> fetchAll();
+        $handle = $pdo->prepare("SELECT * FROM product");
+        $handle->execute();
+        $getProducts = $handle->fetchAll();
 
         $productArray = [];
-        foreach ($products as $product) {
-            $product = new Products($product['id'], $product['name'], $product['price']);
+        foreach ($getProducts as $product) {
+            $product = new Product($product['id'], $product['name'], $product['price']);
+            array_push($productArray, $product);
+        }
+        return $productArray;
+    }
 }
-    }
-    }
