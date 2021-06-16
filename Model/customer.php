@@ -9,6 +9,7 @@ class Customer
     private int|null $fixedDiscount;
     private int|null $variableDiscount;
     private int|null $groupId;
+    private Customer_groups $customer_groups;
 
     public function __construct(int $id, string $firstName, string $lastName, int|null $fixedDiscount, int|null $variableDiscount, int|null $groupId)
     {
@@ -49,5 +50,10 @@ class Customer
     {
         return $this->groupId;
     }
+
+    /*public function totalFixedDiscount(){
+
+    }
+    }*/
 
 }

@@ -18,6 +18,9 @@ class HomepageController
         $loaderForCustomers = new CustomerLoader();
         $allCustomers = $loaderForCustomers->getCustomers();
 
+        if (isset($_POST['product']) && isset ($_POST['customer'])){
+           $selectedProduct = $allProducts[(int)$_POST['product']];
+        }
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.
 

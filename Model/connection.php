@@ -8,7 +8,7 @@ class Connection
         $dbhost = 'localhost';
         $dbuser = 'root';
         $dbpass = '';
-        $db = 'oop-price-calculator';
+        $db = 'phpcal';
 
         $driverOptions = [
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
