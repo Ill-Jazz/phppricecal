@@ -8,11 +8,13 @@ class HomepageController
     {
         //this is just example code, you can remove the line below
         $pdo = Connection::openConnection();
-        $handle = $pdo->prepare('SELECT * FROM product');
+        $handle = $pdo->prepare('SELECT * FROM customer WHERE firstname = "buddy"');
         $handle->execute();
-        $product = $handle->fetchAll();
+        $handle->fetch();
+        $customer = $handle->fetch();
 
-        var_dump($product);
+        var_dump($customer);
+
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

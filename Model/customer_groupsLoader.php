@@ -1,7 +1,7 @@
 <?php
 
 
-class customer_groupsLoader
+class Customer_groupsLoader
 {
 
 }

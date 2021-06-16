@@ -17,8 +17,10 @@ Ilias and Lawrence (aka the Aaantwaarpeeuh Gang)
 - [x] Create 7 classes
 - [x] Do not butcher boilerplate code
 
-## TASKS FOR 15/06/2021
+## TASKS FOR 16/06/2021
+- Price calculation
 - Create env.local file to use in project
 - MVC
 - Display database content on page (try catch, testing)
-- HAVE FUN
+- Class loaders
+- Have Fun
