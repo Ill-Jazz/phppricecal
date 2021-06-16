@@ -7,16 +7,16 @@ class HomepageController
     public function render(array $GET, array $POST)
     {
         //this is just example code, you can remove the line below
-        $pdo = Connection::openConnection();
+        /*$pdo = Connection::openConnection();
         $handle = $pdo->prepare('SELECT * FROM customer WHERE firstname = "buddy"');
         $handle->execute();
-        $handle->fetchAll();
+        $handle->fetchAll();*/
 
         $loaderForProducts = new ProductLoader();
         $allProducts = $loaderForProducts->getProducts();
 
-        /*$loaderForCustomers = new CustomerLoader();
-        $allCustomers = $loaderForCustomers->getCustomers();*/
+        $loaderForCustomers = new CustomerLoader();
+        $allCustomers = $loaderForCustomers->getCustomers();
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

@@ -8,7 +8,7 @@ class CustomerLoader
         $connect = new Connection();
         $pdo = $connect->Openconnection();
 
-        $handle = $pdo->prepare("SELECT * FROM customer");
+        $handle = $pdo->prepare("SELECT * FROM customer ORDER BY id");
         $handle->execute();
         $getCustomer = $handle->fetchAll();
 
