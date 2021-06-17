@@ -18,12 +18,27 @@ class HomepageController
         $loaderForCustomers = new CustomerLoader();
         $allCustomers = $loaderForCustomers->getCustomers();
 
+        $loaderForCustomer = new CustomerLoader();
+        $getSelectedCustomer = $loaderForCustomer->getCustomerById(1);
+
+
         if (isset($_POST['product']) && isset ($_POST['customer'])){
-           $selectedProduct = $allProducts[(int)$_POST['product']];
+           //$selectedProduct = $_POST['product'];
+           //$selectedCustomer = $_POST['customer'];
+           //var_dump($_POST);
+           //$selectedCustomerGroup = '';
+           /*$loaderForCustomerGroups = new Customer_groupsLoader();
+           $customerGroups = $loaderForCustomerGroups->getCustomerGroupId($getSelectedCustomer);*/
         }
+
+
+
+        //var_dump($groupList);
+        print_r($getSelectedCustomer);
+        /*$calculator = new Calculator($selectedProduct, );*/
+
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.
-
         //load the view
         require 'View/homepage.php';
     }

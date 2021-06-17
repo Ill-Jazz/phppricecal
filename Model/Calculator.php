@@ -11,7 +11,6 @@ class Calculator
     private int $groupHighestVarDiscount;
     private int $finalPrice;
 
-    //methods
     public function __construct(int $chosenCustomer, array $customerGroups, int $chosenProduct, int $groupFixedDiscount, int $groupHighestVarDiscount, int $finalPrice)
     {
         $this->chosenCustomer = $chosenCustomer;

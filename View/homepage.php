@@ -18,7 +18,7 @@
                 <label for="customer">Choose a customer :</label>
                 <select name='customer' id='customer'>
                     <?php foreach ($allCustomers as $customer) {
-                        echo "<option value='{$customer->getFirstName()}' > {$customer->getFirstName()} {$customer->getLastName()}</option>";
+                        echo "<option value='{$customer->getId()}' > {$customer->getId()} {$customer->getFirstName()} {$customer->getLastName()}</option>";
                     }
                     ?>
                 </select>

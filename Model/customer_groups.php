@@ -1,15 +1,15 @@
 <?php
 
 
-class Customer_groups
+class Customer_group
 {
     private int $id;
     private string $name;
-    private int $parentId;
-    private int $fixedDiscount;
-    private int $variableDiscount;
+    private int|null $parentId;
+    private int|null $fixedDiscount;
+    private int|null $variableDiscount;
 
-    public function __construct(int $id, string $name, int $parentId, int $fixedDiscount, int $variableDiscount)
+    public function __construct(int $id, string $name, int|null $parentId, int|null $fixedDiscount, int|null $variableDiscount)
     {
         $this->id = $id;
         $this->name = $name;
@@ -28,17 +28,17 @@ class Customer_groups
         return $this->name;
     }
 
-    public function getParentId(): int
+    public function getParentId(): int|null
     {
         return $this->parentId;
     }
 
-    public function getFixedDiscount(): int
+    public function getFixedDiscount(): int|null
     {
         return $this->fixedDiscount;
     }
 
-    public function getVariableDiscount(): int
+    public function getVariableDiscount(): int|null
     {
         return $this->variableDiscount;
     }
