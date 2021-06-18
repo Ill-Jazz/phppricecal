@@ -9,7 +9,7 @@
                     <?php foreach ($allProducts as $product) {
                         $productId = number_format($product->getPrice() / 100, 2);
                         echo "<option value='
-                {$product->getName()}'> 
+                {$product->getId()}'> 
                 {$product->getName()} &euro;{$productId} </option>";
                     }
                     ?>
