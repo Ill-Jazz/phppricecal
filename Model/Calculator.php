@@ -5,7 +5,7 @@ class Calculator
 {
     //properties
     private int $chosenCustomer;
-    private array $customerGroups = [];
+    private array  $customerGroups = [];
     private int $chosenProduct;
     /*private int $groupFixedDiscount;
     private int $groupHighestVarDiscount;
