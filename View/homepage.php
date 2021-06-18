@@ -28,5 +28,4 @@
             </div>
         </form>
     </section>
-
 <?php require 'includes/footer.php' ?>
