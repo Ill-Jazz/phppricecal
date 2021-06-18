@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 class HomepageController
 {
@@ -13,7 +13,6 @@ class HomepageController
         $handle->fetchAll();*/
 
 
-
         $loaderForCustomers = new CustomerLoader();
         $allCustomers = $loaderForCustomers->getCustomers();
 
@@ -22,25 +21,34 @@ class HomepageController
 
 
         $customerGroups = [];
-        if (isset($_POST['product']) && isset ($_POST['customer'])){
-           //$selectedProduct = $_POST['product'];
-           $selectedCustomer = $_POST['customer'];
-           //var_dump($_POST);
-           //$selectedCustomerGroup = '';
+        $selectedCustomer = "";
+        $firstname ="";
+        $lastname="";
+        $product="";
+        $price="";
+
+        if (isset($_POST['product']) && isset ($_POST['customer'])) {
+            //$selectedProduct = $_POST['product']
+            $selectedCustomer = $_POST['customer'];
+            //var_dump($_POST);
+            //$selectedCustomerGroup = '';
+            $selectedProduct = $_POST['product'];
+            
 
             $loaderForCustomer = new CustomerLoader();
             $getSelectedCustomer = $loaderForCustomer->getCustomerById($selectedCustomer);
+            $getSelectedProduct = $loaderForProducts->getProductById($selectedProduct);
             $loaderForCustomerGroups = new Customer_groupsLoader();
             $loaderForCustomerGroups->getCustomerGroups();
             $customerGroups = $loaderForCustomerGroups->getCustomerGroupId($getSelectedCustomer);
-            var_dump($customerGroups);
+            $firstname = $getSelectedCustomer->getFirstName();
+            //var_dump($customerGroups);
         }
-
 
 
         //var_dump($groupList);
         //print_r($getSelectedCustomer);
-        var_dump($_POST);
+        //var_dump($_POST);
 
         /*$calculator = new Calculator($selectedProduct, );*/
 
