@@ -11,7 +11,6 @@ require 'Model/products.php';
 require 'Model/productsLoader.php';
 require 'Model/customerLoader.php';
 require 'Model/customer_groupsLoader.php';
-require 'Model/Calculator.php';
 
 require 'Controller/HomepageController.php';
 $controller = new HomepageController();

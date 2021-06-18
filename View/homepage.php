@@ -9,7 +9,7 @@
                     <?php foreach ($allProducts as $product) {
                         $productId = number_format($product->getPrice() / 100, 2);
                         echo "<option value='
-                {$product->getId()}'> 
+                {$product->getName()}'> 
                 {$product->getName()} &euro;{$productId} </option>";
                     }
                     ?>
@@ -28,4 +28,8 @@
             </div>
         </form>
     </section>
+    <?php
+        print_r($customerGroups);
+    ?>
 <?php require 'includes/footer.php' ?>
+test branch
