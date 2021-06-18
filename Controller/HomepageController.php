@@ -33,7 +33,7 @@ class HomepageController
             //var_dump($_POST);
             //$selectedCustomerGroup = '';
             $selectedProduct = $_POST['product'];
-            
+
 
             $loaderForCustomer = new CustomerLoader();
             $getSelectedCustomer = $loaderForCustomer->getCustomerById($selectedCustomer);
@@ -42,6 +42,11 @@ class HomepageController
             $loaderForCustomerGroups->getCustomerGroups();
             $customerGroups = $loaderForCustomerGroups->getCustomerGroupId($getSelectedCustomer);
             $firstname = $getSelectedCustomer->getFirstName();
+            $lastname = $getSelectedCustomer->getLastName();
+
+            $product = $getSelectedProduct->getId();
+            var_dump($product);
+
             //var_dump($customerGroups);
         }
 

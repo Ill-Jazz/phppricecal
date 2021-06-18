@@ -22,7 +22,7 @@ class ProductLoader
 
     private int $getProductById;
 
-    public function getProductById($selectedProduct) : Product {
+    public function getProductById($selectedProduct) : object {
         $connect = new Connection();
         $pdo = $connect->Openconnection();
 
@@ -31,7 +31,7 @@ class ProductLoader
         $getProductById = $handle->fetch();
         //var_dump($getProductById);
         $product = $getProductById;
-        $productById = new Product($product['id'], $product['name'], $product['price']);
+        $productById = new Product(intval($product['id']), $product['name'], intval($product['price']));
         return $productById;
     }
 }
