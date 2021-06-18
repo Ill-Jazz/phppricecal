@@ -28,10 +28,10 @@ class ProductLoader
 
         $handle = $pdo->prepare("SELECT * FROM product WHERE id='$selectedProduct'");
         $handle->execute();
-        $getProductById = $handle->fetchAll();
-        var_dump($getProductById);
-        $product = $getProductById[0];
-        $productById = new Product($product['id'], $product['name'], $product['price']);
+        $getProductById = $handle->fetch();
+        //var_dump($getProductById);
+        $product = $getProductById;
+        $productById = new Product(intval($product['id']), $product['name'], intval($product['price']));
         return $productById;
     }
 }
