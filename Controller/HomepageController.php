@@ -12,14 +12,12 @@ class HomepageController
         $handle->execute();
         $handle->fetchAll();*/
 
-        $loaderForProducts = new ProductLoader();
-        $allProducts = $loaderForProducts->getProducts();
+
 
         $loaderForCustomers = new CustomerLoader();
         $allCustomers = $loaderForCustomers->getCustomers();
 
-        $loaderForCustomer = new CustomerLoader();
-        $getSelectedCustomer = $loaderForCustomer->getCustomerById(1);
+
 
 
         if (isset($_POST['product']) && isset ($_POST['customer'])){
@@ -29,12 +27,17 @@ class HomepageController
            //$selectedCustomerGroup = '';
            /*$loaderForCustomerGroups = new Customer_groupsLoader();
            $customerGroups = $loaderForCustomerGroups->getCustomerGroupId($getSelectedCustomer);*/
+            $loaderForCustomer = new CustomerLoader();
+            $getSelectedCustomer = $loaderForCustomer->getCustomerById(1);
+            $loaderForProducts = new ProductLoader();
+            $allProducts = $loaderForProducts->getProducts();
         }
 
 
 
         //var_dump($groupList);
-        print_r($getSelectedCustomer);
+        //print_r($getSelectedCustomer);
+        var_dump($_POST);
         /*$calculator = new Calculator($selectedProduct, );*/
 
         //you should not echo anything inside your controller - only assign vars here

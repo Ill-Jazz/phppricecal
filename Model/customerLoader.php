@@ -26,14 +26,12 @@ class CustomerLoader
         $connect = new Connection();
         $pdo = $connect->Openconnection();
 
-        $customerSelected = $_POST['customer'];
-        $handle = $pdo->prepare("SELECT * FROM customer WHERE id='$customerSelected'");
+        $handle = $pdo->prepare("SELECT * FROM customer WHERE id='$selectedCustomer'");
         $handle->execute();
         $getCustomerById = $handle->fetchAll();
         var_dump($getCustomerById);
-        $customer = $getCustomerById;
+        $customer = $getCustomerById[0];
         $customerById = new Customer($customer['id'], $customer['firstname'], $customer['lastname'], $customer['group_id'], $customer['fixed_discount'], $customer['variable_discount']);;
-        return (object)$getCustomerById;
+        return $customerById;
     }
-
 }

@@ -9,20 +9,19 @@ Ilias and Lawrence (aka the Aaantwaarpeeuh Gang)
 - Setting up the directories using the MVC design pattern
 
 ## DOUBTS, WORRIES, QUESTIONS
+Doubt: Finishing today
+W
 
 ## Tasks
 - [x] Establish connection to database
 - [ ] Display DB content on page
-- [ ] Use MVC model
+- [x] Use MVC model
 - [x] Create 7 classes
 - [x] Do not butcher boilerplate code
 
-## TASKS FOR 17/06/2021
-- Price calculation
-- Create env.local file to use in project
-- MVC
-- Display database content on page (try catch, testing)
-- Class loaders
+## TASKS FOR 18/06/2021
+- Make the damn calculator
+- (Create env.local file to use in project)
 - Have Fun
 
 PRICE CALCULATION NOTES
