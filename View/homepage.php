@@ -28,7 +28,5 @@
             </div>
         </form>
     </section>
-    <?php
-        print_r($customerGroups);
-    ?>
+
 <?php require 'includes/footer.php' ?>

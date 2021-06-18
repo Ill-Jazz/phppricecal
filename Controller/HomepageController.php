@@ -23,9 +23,9 @@ class HomepageController
 
         $customerGroups = [];
         if (isset($_POST['product']) && isset ($_POST['customer'])){
-           //$selectedProduct = $_POST['product'];
+           $selectedProduct = $_POST['product'];
            $selectedCustomer = $_POST['customer'];
-           //var_dump($_POST);
+
            //$selectedCustomerGroup = '';
 
             $loaderForCustomer = new CustomerLoader();
@@ -33,14 +33,13 @@ class HomepageController
             $loaderForCustomerGroups = new Customer_groupsLoader();
             $loaderForCustomerGroups->getCustomerGroups();
             $customerGroups = $loaderForCustomerGroups->getCustomerGroupId($getSelectedCustomer);
-            var_dump($customerGroups);
+
         }
 
 
 
         //var_dump($groupList);
         //print_r($getSelectedCustomer);
-        var_dump($_POST);
 
         /*$calculator = new Calculator($selectedProduct, );*/
 
