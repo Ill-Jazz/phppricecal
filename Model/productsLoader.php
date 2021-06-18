@@ -28,9 +28,9 @@ class ProductLoader
 
         $handle = $pdo->prepare("SELECT * FROM product WHERE id='$selectedProduct'");
         $handle->execute();
-        $getProductInfo = $handle->fetchAll();
+        $getProductInfo = $handle->fetch();
 
-        $product = $getProductInfo[0]['name'];
+        $product = $getProductInfo;
         $productById = new Product($product['id'], $product['name'], $product['price']);
         return  $productById;
     }

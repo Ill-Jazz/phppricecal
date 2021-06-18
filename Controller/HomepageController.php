@@ -26,9 +26,12 @@ class HomepageController
             $loaderForCustomerGroups->getCustomerGroups();
             $customerGroups = $loaderForCustomerGroups->getCustomerGroupId($getSelectedCustomer);
 
+
+
             $calculator = new Calculator((int)$selectedCustomer, (int)$selectedProduct);
             $calculator->getPrice();
-            var_dump($getProductById['price']);
+            $productObject = $loaderForProducts->getProductById((int)$selectedProduct);
+            echo $productObject->getPrice();
         }
 
 

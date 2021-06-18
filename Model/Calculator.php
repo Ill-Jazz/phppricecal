@@ -32,7 +32,7 @@ class Calculator
             $product = $loaderX->getProductById($_POST['product']);
             $this->price = $product->getPrice();
         }
-        print $_POST['product'];
+        //print $_POST['product'];
     }
 
     /*public function getChosenCustomer(): int
