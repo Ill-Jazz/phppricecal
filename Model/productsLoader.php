@@ -20,18 +20,18 @@ class ProductLoader
         return $productArray;
     }
 
-    private int $getProductById;
+    //private $getProductById;
 
-    public function getProductById($selectedProduct) : object {
+    public function getProductById(int $selectedProduct) : object {
         $connect = new Connection();
         $pdo = $connect->Openconnection();
 
         $handle = $pdo->prepare("SELECT * FROM product WHERE id='$selectedProduct'");
         $handle->execute();
-        $getProductById = $handle->fetchAll();
-        var_dump($getProductById);
-        $product = $getProductById[0];
+        $getProductInfo = $handle->fetchAll();
+
+        $product = $getProductInfo[0]['name'];
         $productById = new Product($product['id'], $product['name'], $product['price']);
-        return $productById;
+        return  $productById;
     }
 }

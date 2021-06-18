@@ -5,28 +5,42 @@ class Calculator
 {
     //properties
     private int $chosenCustomer;
-    private array  $customerGroups = [];
+    private array $customerGroups = [];
+    private int $price;
     private int $chosenProduct;
-    /*private int $groupFixedDiscount;
+    private int $groupFixedDiscount;
     private int $groupHighestVarDiscount;
-    private int $finalPrice;*/
+    private int $finalPrice;
 
-    public function __construct(int $chosenCustomer, array $customerGroups, int $chosenProduct)
+    public function __construct(int $chosenCustomer, int $chosenProduct)
     {
         $this->chosenCustomer = $chosenCustomer;
-        $this->customerGroups = $customerGroups;
         $this->chosenProduct = $chosenProduct;
         /*$this->groupFixedDiscount = $groupFixedDiscount;
         $this->groupHighestVarDiscount = $groupHighestVarDiscount;
         $this->finalPrice = $finalPrice;*/
     }
 
-    public function getChosenCustomer(): int
-    {
-        return $this->chosenCustomer;
+    public function calculate(){
+
     }
 
-    public function getFirstName(): array
+    public function getPrice(){
+        $loaderX = new ProductLoader();
+        $chosenProduct = $loaderX->getProducts();
+        if(isset($this->chosenProduct)){
+            $product = $loaderX->getProductById($_POST['product']);
+            $this->price = $product->getPrice();
+        }
+        print $_POST['product'];
+    }
+
+    /*public function getChosenCustomer(): int
+    {
+        return $this->chosenCustomer;*/
+
+
+    public function getChosenCustomerFixedDiscount(): array
     {
         return $this->customerGroups;
     }
@@ -34,6 +48,10 @@ class Calculator
     public function getChosenProduct(): int
     {
         return $this->chosenProduct;
+    }
+
+    public function getChosenProductPrice() : int {
+        return  $this->price;
     }
 
     /*public function getGroupFixedDiscount(): int
