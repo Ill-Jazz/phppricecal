@@ -7,18 +7,18 @@ class Calculator
     private int $chosenCustomer;
     private array $customerGroups = [];
     private int $chosenProduct;
-    private int $groupFixedDiscount;
+    /*private int $groupFixedDiscount;
     private int $groupHighestVarDiscount;
-    private int $finalPrice;
+    private int $finalPrice;*/
 
-    public function __construct(int $chosenCustomer, array $customerGroups, int $chosenProduct, int $groupFixedDiscount, int $groupHighestVarDiscount, int $finalPrice)
+    public function __construct(int $chosenCustomer, array $customerGroups, int $chosenProduct)
     {
         $this->chosenCustomer = $chosenCustomer;
         $this->customerGroups = $customerGroups;
         $this->chosenProduct = $chosenProduct;
-        $this->groupFixedDiscount = $groupFixedDiscount;
+        /*$this->groupFixedDiscount = $groupFixedDiscount;
         $this->groupHighestVarDiscount = $groupHighestVarDiscount;
-        $this->finalPrice = $finalPrice;
+        $this->finalPrice = $finalPrice;*/
     }
 
     public function getChosenCustomer(): int
@@ -36,7 +36,7 @@ class Calculator
         return $this->chosenProduct;
     }
 
-    public function getGroupFixedDiscount(): int
+    /*public function getGroupFixedDiscount(): int
     {
         return $this->groupFixedDiscount;
     }
@@ -49,5 +49,5 @@ class Calculator
     public function getFinalPrice(): int
     {
         return $this->finalPrice;
-    }
+    }*/
 }

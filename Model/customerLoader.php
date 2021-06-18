@@ -22,16 +22,16 @@ class CustomerLoader
 
     private int $getCustomerById;
 
-    public function getCustomerById($selectedCustomer) : object {
+    public function getCustomerById($selectedCustomer) : Customer {
         $connect = new Connection();
         $pdo = $connect->Openconnection();
 
         $handle = $pdo->prepare("SELECT * FROM customer WHERE id='$selectedCustomer'");
         $handle->execute();
-        $getCustomerById = $handle->fetchAll();
+        $getCustomerById = $handle->fetch();
         var_dump($getCustomerById);
-        $customer = $getCustomerById[0];
-        $customerById = new Customer($customer['id'], $customer['firstname'], $customer['lastname'], $customer['group_id'], $customer['fixed_discount'], $customer['variable_discount']);;
+        $customer = $getCustomerById;
+        $customerById = new Customer($customer['id'], $customer['firstname'], $customer['lastname'], $customer['fixed_discount'], $customer['variable_discount'], $customer['group_id']);;
         return $customerById;
     }
 }
