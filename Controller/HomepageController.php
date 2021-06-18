@@ -24,7 +24,7 @@ class HomepageController
         $selectedCustomer = "";
         $firstname ="";
         $lastname="";
-        $product="";
+        $productid="";
         $price="";
 
         if (isset($_POST['product']) && isset ($_POST['customer'])) {
@@ -44,8 +44,8 @@ class HomepageController
             $firstname = $getSelectedCustomer->getFirstName();
             $lastname = $getSelectedCustomer->getLastName();
 
-            $product = $getSelectedProduct->getId();
-            var_dump($product);
+            $productid = $getSelectedProduct->getId();
+
 
             //var_dump($customerGroups);
         }

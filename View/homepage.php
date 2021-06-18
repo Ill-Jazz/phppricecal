@@ -44,7 +44,7 @@
                     <tr>
                         <th scope="row"><?php echo $firstname?></th>
                         <th scope="row"><?php echo $lastname?></th>
-                        <th scope="row"><?php echo $product?></th>
+                        <th scope="row"><?php echo $productid?></th>
                         <th scope="row"><?php echo $price?></th>
                     </tr>
                     </tbody>
